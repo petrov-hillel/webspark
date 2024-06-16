@@ -1,0 +1,14 @@
+@mixin font($fontSize: 16px, $fontWeight: 500, $lh: 18.75px) {
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  line-height: $lh;
+}
+
+@mixin flex($ai: center, $jc: space-between, $wr: nowrap, $fd: row) {
+  display: flex;
+  align-items: $ai;
+  justify-content: $jc;
+  flex-wrap: $wr;
+  flex-direction: $fd;
+}
+

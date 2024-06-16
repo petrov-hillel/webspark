@@ -1,0 +1,61 @@
+@import "../../stylesUtils/variables";
+@import "../../stylesUtils/mixins";
+@import "../../stylesUtils/breakPoints";
+
+.picker {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  gap: 11px;
+
+  @include onMobile {
+    align-items: flex-start;
+  }
+
+  &__inputs {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    @include onMobile {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  &__date {
+    position: relative;
+
+    & input {
+      width: 162px;
+      height: 28px;
+      padding: 7px 0 7px 8px;
+      border: 1px solid $input-border;
+      border-radius: 4px;
+      background-color: transparent;
+      color: $input-color-text;
+      @include font(13px,400,15.23px);
+      cursor: pointer;
+      &:focus{
+        outline: none;
+      }
+    }
+    &-close, &-calendar {
+      position: absolute;
+      @include flex(center, center);
+      top: 1px;
+      width: 27px;
+      height: 26px;
+      background-color: #EBEBEB;
+      border-left: 1px solid $input-border;
+      cursor: pointer;
+    }
+    &-close {
+      right: 28px;
+    }
+    &-calendar {
+      right: 1px;
+      border-radius: 0 3px 3px 0;
+    }
+  }
+}
